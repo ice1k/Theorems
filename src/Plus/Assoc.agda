@@ -16,7 +16,7 @@ private
           | plus-comm b 0
             = refl
 
-  a+/b+c/=/a+b/+c : ∀ a b c → a + (b + c) ≡ (a + b) + c
+  a+/b+c/=/a+b/+c : ∀ a b c → a + (b + c) ≡ a + b + c
   a+/b+c/=/a+b/+c zero    b c
     rewrite 0+/b+c/=/0+b/+c b c
             = refl
@@ -27,5 +27,6 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
+plus-assoc : ∀ a b c → a + (b + c) ≡ (a + b) + c
 plus-assoc = a+/b+c/=/a+b/+c
 
