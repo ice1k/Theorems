@@ -22,6 +22,16 @@ private
   ∨-comm′ (∨-intro₀ p) = ∨-intro₁ p
   ∨-comm′ (∨-intro₁ q) = ∨-intro₀ q
 
+  ∨-assoc₀ : ∀ {P Q R} → ((P ∨ Q) ∨ R) → (P ∨ (Q ∨ R))
+  ∨-assoc₀ (∨-intro₀ (∨-intro₀ x)) = ∨-intro₀ x
+  ∨-assoc₀ (∨-intro₀ (∨-intro₁ x)) = ∨-intro₁ (∨-intro₀ x)
+  ∨-assoc₀ (∨-intro₁ x) = ∨-intro₁ (∨-intro₁ x)
+
+  ∨-assoc₁ : ∀ {P Q R} → (P ∨ (Q ∨ R)) → ((P ∨ Q) ∨ R)
+  ∨-assoc₁ (∨-intro₀ x) = ∨-intro₀ (∨-intro₀ x)
+  ∨-assoc₁ (∨-intro₁ (∨-intro₀ x)) = ∨-intro₀ (∨-intro₁ x)
+  ∨-assoc₁ (∨-intro₁ (∨-intro₁ x)) = ∨-intro₁ x
+
 ------------------------------------------------------------------------
 -- public aliases
 
@@ -30,3 +40,6 @@ private
 
 ∨-comm : ∀ {P Q} → (P ∨ Q) ⇔ (Q ∨ P)
 ∨-comm = ∧-intro ∨-comm′ ∨-comm′
+
+∨-assoc : ∀ {P Q R} → (P ∨ (Q ∨ R)) ⇔ ((P ∨ Q) ∨ R)
+∨-assoc = ∧-intro ∨-assoc₁ ∨-assoc₀

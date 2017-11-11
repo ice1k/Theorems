@@ -13,7 +13,7 @@ branches:
 script:
 - agda --version
 - git clone https://github.com/agda/agda-stdlib.git
-- cp agda-stdlib/src .
+- cp -r agda-stdlib/src .
 - cd src
 - agda AllProofs.agda
 - cd ..
