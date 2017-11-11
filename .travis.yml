@@ -13,7 +13,7 @@ branches:
 script:
 - agda --version
 - cd src
-- agda AllProofs.agda
+- agda AllProofs.agda -l . -l standard-library
 - cd ..
 
 addons:
