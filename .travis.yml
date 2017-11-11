@@ -1,0 +1,30 @@
+sudo: false
+dist: trusty
+
+# A lightweight config
+# I use my own config
+language: c
+
+branches:
+  only:
+    - master
+#
+
+script:
+- agda --version
+
+addons:
+  apt:
+    sources:
+    - george-edison55-precise-backports
+    - ubuntu-toolchain-r-test
+    packages:
+    - agda-mode
+    - agda-stdlib
+#
+
+cache:
+  apt:
+    true
+#
+
