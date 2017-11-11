@@ -1,4 +1,4 @@
-module Plus.Comm where
+module Nats.Plus.Comm where
 
 open import Data.Nat
 open import Agda.Builtin.Equality

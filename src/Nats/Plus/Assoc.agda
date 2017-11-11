@@ -1,4 +1,4 @@
-module Plus.Assoc where
+module Nats.Plus.Assoc where
 
 open import Data.Nat
 open import Agda.Builtin.Equality
