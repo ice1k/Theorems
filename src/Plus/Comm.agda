@@ -1,9 +1,7 @@
 module Plus.Comm where
 
-open import Data.List
 open import Data.Nat
 open import Agda.Builtin.Equality
-
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -29,7 +27,7 @@ private
             = refl
 
 ------------------------------------------------------------------------
--- public stuffs
+-- public aliases
 
 plus-comm : ∀ a b → a + b ≡ b + a
 plus-comm = a+b=b+a

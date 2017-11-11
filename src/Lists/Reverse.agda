@@ -9,7 +9,7 @@ open import Agda.Builtin.Equality
 
 reverse : ∀ {n m} {A : Set n} → Vec A m → Vec A m
 reverse [] = []
-reverse (a ∷ as) = reverse as ∷ʳ a
+reverse (x ∷ xs) = reverse xs ∷ʳ x
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -37,7 +37,7 @@ private
             = refl
 
 ------------------------------------------------------------------------
--- public stuffs
+-- public aliases
 
 rev-rev-id : ∀ {n m} {A : Set n} (v : Vec A m) → reverse (reverse v) ≡ v
 rev-rev-id = rev∘rev=id
