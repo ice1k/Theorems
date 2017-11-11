@@ -4,7 +4,7 @@ module Logics.And where
 -- definitions
 
 data _∧_ (P Q : Set) : Set where
-  ∧-intro : P → Q → (P ∧ Q)
+  ∧-intro : P → Q → P ∧ Q
 
 _⇔_ : (P Q : Set) → Set
 p ⇔ q = (p → q) ∧ (q → p)

@@ -12,7 +12,9 @@ branches:
 
 script:
 - agda --version
-- agda src/AllProofs.agda
+- cd src
+- agda AllProofs.agda
+- cd ..
 
 addons:
   apt:
