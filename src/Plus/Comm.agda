@@ -4,7 +4,12 @@ open import Data.List
 open import Data.Nat
 open import Agda.Builtin.Equality
 
+
+------------------------------------------------------------------------
+-- internal stuffs
+
 private
+
   a+0=0+a : ∀ a → a + 0 ≡ a
   a+0=0+a  zero   = refl
   a+0=0+a (suc a) rewrite a+0=0+a a = refl
@@ -22,6 +27,9 @@ private
     rewrite a+b=b+a a b
           | ++a+b=a+b++ b a
             = refl
+
+------------------------------------------------------------------------
+-- public stuffs
 
 plus-comm : ∀ a b → a + b ≡ b + a
 plus-comm = a+b=b+a
