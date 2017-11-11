@@ -12,7 +12,7 @@ private
   a+0=0+a  zero   = refl
   a+0=0+a (suc a) rewrite a+0=0+a a = refl
 
-  ++a+b=a+b++ : ∀ a b → suc a + b ≡ a + suc b
+  ++a+b=a+b++ : ∀ a b → suc (a + b) ≡ a + suc b
   ++a+b=a+b++  zero   b = refl
   ++a+b=a+b++ (suc a) b rewrite ++a+b=a+b++ a b = refl
 
