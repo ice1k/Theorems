@@ -12,8 +12,10 @@ branches:
 
 script:
 - agda --version
+- git clone https://github.com/agda/agda-stdlib.git
+- cp agda-stdlib/src .
 - cd src
-- agda AllProofs.agda -l . -l standard-library
+- agda AllProofs.agda
 - cd ..
 
 addons:
