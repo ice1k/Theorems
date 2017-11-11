@@ -3,7 +3,7 @@ module Nats.Plus.Assoc where
 open import Data.Nat
 open import Agda.Builtin.Equality
 
-open import Plus.Comm
+open import Nats.Plus.Comm
 
 ------------------------------------------------------------------------
 -- internal stuffs

@@ -1,5 +1,7 @@
 # Theorems
 
+[![Build Status](https://travis-ci.org/ice1000/Theorems.svg?branch=master)](https://travis-ci.org/ice1000/Theorems)
+
 Theorems proving codes, written in Agda.
 
 Each proof is put into separate files, except those very very short ones.
