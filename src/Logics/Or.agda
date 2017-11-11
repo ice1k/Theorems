@@ -5,6 +5,8 @@ open import Logics.And
 ------------------------------------------------------------------------
 -- definitions
 
+infixl 4 _∨_
+
 data _∨_ (P Q : Set) : Set where
   ∨-intro₀ : P → P ∨ Q
   ∨-intro₁ : Q → P ∨ Q

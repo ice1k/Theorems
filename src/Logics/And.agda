@@ -3,6 +3,9 @@ module Logics.And where
 ------------------------------------------------------------------------
 -- definitions
 
+infixl 5 _∧_
+infixl 4 _⇔_
+
 data _∧_ (P Q : Set) : Set where
   ∧-intro : P → Q → P ∧ Q
 
