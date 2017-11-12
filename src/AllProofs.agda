@@ -9,3 +9,5 @@ import Logics.And
 import Logics.Or
 
 import Lists.Reverse
+
+import Isos.NatLike
