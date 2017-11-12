@@ -25,12 +25,12 @@ meow~ : Meow -- some basic function definitions here
 
 private
 
-  ⌈meow≶meow⌉ : Meow ≡ Meow -- proofs here, with very strange but readable naming
-                            -- you'll never know how I typed those characters
+  ⌈meow≶meow⌉ : Meow ≡ Meow -- proofs here, with strange but readable naming
+                            -- you'll never know how I type those characters
 
 ------------------------------------------------------------------------
 -- public aliases
 
 meow-meow : Meow ≡ Meow
-meow-meow = ⌈meow≶meow⌉ -- regulated aliases
+meow-meow = ⌈meow≶meow⌉ -- regulated aliases, using ascii characters
 ```

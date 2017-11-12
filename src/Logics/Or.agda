@@ -34,14 +34,23 @@ private
   ∨-assoc₁ (∨-intro₁ (∨-intro₀ x)) = ∨-intro₀ (∨-intro₁ x)
   ∨-assoc₁ (∨-intro₁ (∨-intro₁ x)) = ∨-intro₁ x
 
+  ∨-elim : ∀ {P Q n} {R : Set n} → (P → R) → (Q → R) → (P ∨ Q) → R
+  ∨-elim = p→r+q→r+p∨q=r
+
+  ∨-comm : ∀ {P Q} → (P ∨ Q) ⇔ (Q ∨ P)
+  ∨-comm = ∧-intro ∨-comm′ ∨-comm′
+
+  ∨-assoc : ∀ {P Q R} → (P ∨ (Q ∨ R)) ⇔ ((P ∨ Q) ∨ R)
+  ∨-assoc = ∧-intro ∨-assoc₁ ∨-assoc₀
+
 ------------------------------------------------------------------------
 -- public aliases
 
-∨-elim : ∀ {P Q n} {R : Set n} → (P → R) → (Q → R) → (P ∨ Q) → R
-∨-elim = p→r+q→r+p∨q=r
+or-elim : ∀ {P Q n} {R : Set n} → (P → R) → (Q → R) → (P ∨ Q) → R
+or-elim = ∨-elim
 
-∨-comm : ∀ {P Q} → (P ∨ Q) ⇔ (Q ∨ P)
-∨-comm = ∧-intro ∨-comm′ ∨-comm′
+or-comm : ∀ {P Q} → (P ∨ Q) ⇔ (Q ∨ P)
+or-comm = ∨-comm
 
-∨-assoc : ∀ {P Q R} → (P ∨ (Q ∨ R)) ⇔ ((P ∨ Q) ∨ R)
-∨-assoc = ∧-intro ∨-assoc₁ ∨-assoc₀
+or-assoc : ∀ {P Q R} → (P ∨ (Q ∨ R)) ⇔ ((P ∨ Q) ∨ R)
+or-assoc = ∨-assoc

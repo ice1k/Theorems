@@ -32,5 +32,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-plus-comm : ∀ a b → a + b ≡ b + a
-plus-comm = a+b=b+a
+nat-plus-comm : ∀ a b → a + b ≡ b + a
+nat-plus-comm = a+b=b+a

@@ -26,12 +26,18 @@ private
   ∧-assoc₁ : ∀ {P Q R} → (P ∧ (Q ∧ R)) → ((P ∧ Q) ∧ R)
   ∧-assoc₁ (∧-intro p (∧-intro q r)) = ∧-intro (∧-intro p q) r
 
+  ∧-comm : ∀ {P Q} → (P ∧ Q) ⇔ (Q ∧ P)
+  ∧-comm = ∧-intro ∧-comm′ ∧-comm′
+
+  ∧-assoc : ∀ {P Q R} → (P ∧ (Q ∧ R)) ⇔ ((P ∧ Q) ∧ R)
+  ∧-assoc = ∧-intro ∧-assoc₁ ∧-assoc₀
+
 ------------------------------------------------------------------------
 -- public aliases
 
-∧-comm : ∀ {P Q} → (P ∧ Q) ⇔ (Q ∧ P)
-∧-comm = ∧-intro ∧-comm′ ∧-comm′
+and-comm : ∀ {P Q} → (P ∧ Q) ⇔ (Q ∧ P)
+and-comm = ∧-comm
 
-∧-assoc : ∀ {P Q R} → (P ∧ (Q ∧ R)) ⇔ ((P ∧ Q) ∧ R)
-∧-assoc = ∧-intro ∧-assoc₁ ∧-assoc₀
+and-assoc : ∀ {P Q R} → (P ∧ (Q ∧ R)) ⇔ ((P ∧ Q) ∧ R)
+and-assoc = ∧-assoc
 
