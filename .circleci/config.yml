@@ -8,13 +8,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install cabal
-          command: stack --resolver nightly install cabal-install
-      - run:
           name: Install agda
-          command: |
-            cabal update
-            cabal install alex cpphs happy agda
+          command: stack --resolver nightly install alex cpphs happy agda
       - run:
           name: Copy the stdlib to theorems
           command: |
