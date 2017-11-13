@@ -1,1 +1,5 @@
+## Agda compiled
 *.agdai
+
+## Agda generated
+html

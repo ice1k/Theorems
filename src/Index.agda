@@ -8,6 +8,8 @@ import Nats.Add.Comm
 import Ints.Add.Comm
   using (int-add-comm) -- commutative law for addition on integer
 
+-- import Ints.Add.Assoc
+
 import Logics.And
   using (and-comm) -- commutative law for the "and" relation
   using (and-assoc) -- associative law for the "and" relation

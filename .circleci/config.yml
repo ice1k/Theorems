@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # terrorjack's awesome docker image
+      - image: terrorjack/rakuen
+      # - image: terrorjack/meikyu
+    steps:
+      - checkout
+      - run:
+          name: Install cabal
+          command: stack --resolver nightly install cabal-install
+      - run:
+          name: Install agda
+          command: |
+            cabal update
+            cabal install alex cpphs happy agda
+      - run:
+          name: Copy the stdlib to theorems
+          command: |
+            git clone https://github.com/agda/agda-stdlib.git
+            cp -r agda-stdlib/src .
+      - run:
+          name: Build theorems
+          command: agda src/Index.agda
