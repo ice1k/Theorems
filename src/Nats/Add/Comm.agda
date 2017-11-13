@@ -1,4 +1,4 @@
-module Nats.Plus.Comm where
+module Nats.Add.Comm where
 
 open import Data.Nat
 open import Agda.Builtin.Equality
@@ -32,5 +32,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-nat-plus-comm : ∀ a b → a + b ≡ b + a
-nat-plus-comm = a+b=b+a
+nat-add-comm : ∀ a b → a + b ≡ b + a
+nat-add-comm = a+b=b+a

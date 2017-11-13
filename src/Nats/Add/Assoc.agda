@@ -1,9 +1,9 @@
-module Nats.Plus.Assoc where
+module Nats.Add.Assoc where
 
 open import Data.Nat
 open import Agda.Builtin.Equality
 
-open import Nats.Plus.Comm
+open import Nats.Add.Comm
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -12,8 +12,8 @@ private
 
   0+/b+c/=/0+b/+c : ∀ b c → 0 + (b + c) ≡ (0 + b) + c
   0+/b+c/=/0+b/+c b c
-    rewrite nat-plus-comm c 0
-          | nat-plus-comm b 0
+    rewrite nat-add-comm c 0
+          | nat-add-comm b 0
             = refl
 
   a+/b+c/=/a+b/+c : ∀ a b c → a + (b + c) ≡ a + b + c
@@ -27,6 +27,6 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-nat-plus-assoc : ∀ a b c → a + (b + c) ≡ (a + b) + c
-nat-plus-assoc = a+/b+c/=/a+b/+c
+nat-add-assoc : ∀ a b c → a + (b + c) ≡ (a + b) + c
+nat-add-assoc = a+/b+c/=/a+b/+c
 

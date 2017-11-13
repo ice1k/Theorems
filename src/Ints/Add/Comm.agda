@@ -1,8 +1,8 @@
-module Ints.Plus.Comm where
+module Ints.Add.Comm where
 
 open import Data.Integer
 
-open import Nats.Plus.Comm
+open import Nats.Add.Comm
 
 open import Agda.Builtin.Equality
 
@@ -13,16 +13,16 @@ private
 
   a+b=b+a : ∀ a b → a + b ≡ b + a
   a+b=b+a (+    a  ) (+    b  )
-    rewrite nat-plus-comm a b = refl
+    rewrite nat-add-comm a b = refl
   a+b=b+a (+    a  ) (-[1+ b ])
-    rewrite nat-plus-comm a b = refl
+    rewrite nat-add-comm a b = refl
   a+b=b+a (-[1+ a ]) (+    b  )
-    rewrite nat-plus-comm a b = refl
+    rewrite nat-add-comm a b = refl
   a+b=b+a (-[1+ a ]) (-[1+ b ])
-    rewrite nat-plus-comm a b = refl
+    rewrite nat-add-comm a b = refl
 
 ------------------------------------------------------------------------
 -- public aliases
 
-int-plus-comm : ∀ a b → a + b ≡ b + a
-int-plus-comm = a+b=b+a
+int-add-comm : ∀ a b → a + b ≡ b + a
+int-add-comm = a+b=b+a
