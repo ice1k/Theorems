@@ -7,6 +7,7 @@ import Ints.Plus.Comm
 
 import Logics.And
 import Logics.Or
+import Logics.Not
 
 import Lists.Reverse
 

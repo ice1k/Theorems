@@ -30,9 +30,9 @@ private
 
   open import Data.Vec
 
-  -- vec→ℕ : ∀ {n} → Vec ⊤ n → ℕ
-  -- vec→ℕ {n}  []      = n
-  -- vec→ℕ {n} (tt ∷ a) = n
+  vec→ℕ′ : ∀ {n} → Vec ⊤ n → ℕ
+  vec→ℕ′ {n}  []      = n
+  vec→ℕ′ {n} (tt ∷ a) = n
 
   vec→ℕ : ∀ {n} → Vec ⊤ n → ∃ (λ m → n ≡ m)
   vec→ℕ  []      = zero , refl
