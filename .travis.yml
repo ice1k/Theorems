@@ -12,7 +12,7 @@ branches:
 
 script:
 - agda --version
-# - agda src/AllProofs.agda
+# - agda src/Index.agda
 
 install:
 - tree

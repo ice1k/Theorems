@@ -1,4 +1,4 @@
-module AllProofs where
+module Index where
 
 import Nats.Add.Assoc
   using (nat-add-assoc) -- associative law for addition on natrual numbers

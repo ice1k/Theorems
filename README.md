@@ -10,7 +10,7 @@ This library depends on [the Agda standard library](https://github.com/agda/agda
 
 ## Proofs
 
-See [AllProofs.agda](./src/AllProofs.agda)
+See [Index.agda](./src/Index.agda)
 
 ## File structure
 
