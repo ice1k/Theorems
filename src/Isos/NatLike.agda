@@ -4,6 +4,10 @@ open import Isos.Isomorphism
 
 open import Data.Nat
 open import Data.Unit
+open import Data.Product
+
+open import Agda.Builtin.Equality
+open import Relation.Binary.PropositionalEquality
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -26,13 +30,21 @@ private
 
   open import Data.Vec
 
-  vec→ℕ : ∀ {n} → Vec ⊤ n → ℕ
-  vec→ℕ  []      = zero
-  vec→ℕ (tt ∷ a) = suc (vec→ℕ a)
+  -- vec→ℕ : ∀ {n} → Vec ⊤ n → ℕ
+  -- vec→ℕ {n}  []      = n
+  -- vec→ℕ {n} (tt ∷ a) = n
 
-  ℕ→vec : (n : ℕ) → Vec ⊤ n
-  ℕ→vec  zero   = []
-  ℕ→vec (suc a) = tt ∷ ℕ→vec a
+  vec→ℕ : ∀ {n} → Vec ⊤ n → ∃ (λ m → n ≡ m)
+  vec→ℕ  []      = zero , refl
+  vec→ℕ (tt ∷ a) with vec→ℕ a
+  ...               | m , refl = suc m , refl
+
+  ℕ→vec : ∀ {n} → ∃ (λ m → n ≡ m) → Vec ⊤ n
+  ℕ→vec  (zero   , refl) = []
+  ℕ→vec ((suc a) , refl) = tt ∷ ℕ→vec (a , refl)
 
 iso-nat-list : ℕ ⇔ List ⊤
 iso-nat-list = ∧-intro ℕ→list list→ℕ
+
+iso-nat-vec : ∀ {n} → ∃ (λ m → n ≡ m) ⇔ Vec ⊤ n
+iso-nat-vec = ∧-intro ℕ→vec vec→ℕ
