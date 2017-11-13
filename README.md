@@ -8,6 +8,10 @@ Each proof is put into separate files, except those very very short ones.
 
 This library depends on [the Agda standard library](https://github.com/agda/agda-stdlib/).
 
+## Proofs
+
+See [AllProofs.agda](./src/AllProofs.agda)
+
 ## File structure
 
 ```agda

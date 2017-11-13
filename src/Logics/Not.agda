@@ -13,5 +13,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-neg-neg : ∀ {ℓ} {A : Set ℓ} → A → ¬ (¬ A)
-neg-neg = a=¬∘¬a
+not-not : ∀ {ℓ} {A : Set ℓ} → A → ¬ (¬ A)
+not-not = a=¬∘¬a

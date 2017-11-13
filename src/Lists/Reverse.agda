@@ -39,5 +39,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-rev-rev-id : ∀ {n m} {A : Set n} (v : Vec A m) → reverse (reverse v) ≡ v
-rev-rev-id = rev∘rev=id
+rev-rev : ∀ {n m} {A : Set n} (v : Vec A m) → reverse (reverse v) ≡ v
+rev-rev = rev∘rev=id
