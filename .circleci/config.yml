@@ -3,8 +3,8 @@ jobs:
   build:
     docker:
       # terrorjack's awesome docker image
-      - image: terrorjack/rakuen
-      # - image: terrorjack/meikyu
+      # - image: terrorjack/rakuen:ghc-8.2.1.20171108
+      - image: terrorjack/meikyu:ghc-8.2.1.20171108
     steps:
       - checkout
       - run:
