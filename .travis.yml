@@ -34,9 +34,9 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     # - agda-mode
-    # - agda
+    # - agda-stdlib
     - ghc
-    - cabal
+    - cabal-install
     - tree
 #
 
