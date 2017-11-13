@@ -11,21 +11,23 @@ branches:
 #
 
 script:
-- agda src/AllProofs.agda
+# - agda src/AllProofs.agda
 
 install:
 - tree
 - git clone https://github.com/agda/agda-stdlib.git
 - cp -r agda-stdlib/src .  
 
-before_install:
-- cabal update
-- cabal install alex
-- cabal install happy
-- cabal install cpphs
-- cabal install agda
-# - agda-mode setup
-- agda --version
+# before_install:
+# - ghc --version
+# - cache --version
+# - cabal update
+# - cabal install alex
+# - cabal install happy
+# - cabal install cpphs
+# - cabal install agda
+# # - agda-mode setup
+# - agda --version
 
 addons:
   apt:
@@ -33,10 +35,10 @@ addons:
     - george-edison55-precise-backports
     - ubuntu-toolchain-r-test
     packages:
-    # - agda-mode
-    # - agda-stdlib
-    - ghc
-    - cabal-install
+    - agda-mode
+    - agda-stdlib
+    # - ghc
+    # - cabal-install
     - tree
 #
 
