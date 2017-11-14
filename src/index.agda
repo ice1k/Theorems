@@ -1,4 +1,4 @@
-module Index where
+module index where
 
 -- natural numbers
 --- additions

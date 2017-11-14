@@ -13,9 +13,9 @@ This library depends on [the Agda standard library](https://github.com/agda/agda
 
 You can either:
 
-+ View all proves [online](http://ice1000.coding.me/Theorems/Index.html)
++ View all proves [online](http://ice1000.coding.me/Theorems/)
 
-+ See [Index.agda](./src/Index.agda)
++ See [index.agda](./src/index.agda)
 
 ## File structure
 

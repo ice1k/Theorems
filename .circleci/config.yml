@@ -19,12 +19,13 @@ jobs:
           name: Install the Agda Standard lib
           command: |
             git clone https://github.com/agda/agda-stdlib.git ~/agda-stdlib/
+            rm ~/agda-stdlib/src/index.agda
             mkdir ~/.agda
             echo "~/agda-stdlib/standard-library.agda-lib" >> ~/.agda/libraries
             echo "standard-library" >> ~/.agda/defaults
       - run:
           name: Build theorems
-          command: agda src/Index.agda
+          command: agda src/index.agda
       - run:
           name: Build html
-          command: agda --html src/Index.agda
+          command: agda --html src/index.agda
