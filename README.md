@@ -9,9 +9,13 @@ Each proof is put into separate files, except those very very short ones.
 
 This library depends on [the Agda standard library](https://github.com/agda/agda-stdlib/).
 
-## Proofs
+## All Proofs
 
-See [Index.agda](./src/Index.agda)
+You can either:
+
++ View all proves [online](http://ice1000.coding.me/Theorems/Index.html)
+
++ See [Index.agda](./src/Index.agda)
 
 ## File structure
 
