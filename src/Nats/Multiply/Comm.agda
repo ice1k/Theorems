@@ -15,13 +15,13 @@ private
   a*0=0*a  zero   = refl
   a*0=0*a (suc a) = a*0=0*a a
 
-  a+a*b=a*++a : ∀ a b → a + a * b ≡ a * suc b
-  a+a*b=a*++a  zero   _ = refl
-  a+a*b=a*++a (suc a) b
+  a+a*b=a*++b : ∀ a b → a + a * b ≡ a * suc b
+  a+a*b=a*++b  zero   _ = refl
+  a+a*b=a*++b (suc a) b
     rewrite nat-add-comm b (a * suc b)
           | nat-add-comm b (a * b)
           | nat-add-assoc-flip a (a * b) b
-          | a+a*b=a*++a a b
+          | a+a*b=a*++b a b
             = refl
 
   a*b=b*a : ∀ a b → a * b ≡ b * a
@@ -29,7 +29,7 @@ private
     rewrite a*0=0*a b = refl
   a*b=b*a (suc a) b
     rewrite a*b=b*a a b
-          | a+a*b=a*++a b a
+          | a+a*b=a*++b b a
             = refl
 
 ------------------------------------------------------------------------
