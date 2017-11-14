@@ -11,6 +11,12 @@ import Nats.Add.Comm
 --- multiplications
 import Nats.Multiply.Comm
   using (nat-multiply-comm) -- commutative law
+import Nats.Multiply.Distrib
+  using (nat-multiply-distrib) -- distributive law
+  using (nat-multiply-distrib-flip) -- exchanged
+import Nats.Multiply.Assoc
+  using (nat-multiply-assoc) -- associative law
+  using (nat-multiply-assoc-flip) -- exchanged
 
 -- integers
 --- additions
