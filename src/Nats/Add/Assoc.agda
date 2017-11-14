@@ -10,16 +10,8 @@ open import Nats.Add.Comm
 
 private
 
-  0+/b+c/=/0+b/+c : ∀ b c → 0 + (b + c) ≡ (0 + b) + c
-  0+/b+c/=/0+b/+c b c
-    rewrite nat-add-comm c 0
-          | nat-add-comm b 0
-            = refl
-
   a+/b+c/=/a+b/+c : ∀ a b c → a + b + c ≡ a + (b + c)
-  a+/b+c/=/a+b/+c zero    b c
-    rewrite 0+/b+c/=/0+b/+c b c
-            = refl
+  a+/b+c/=/a+b/+c  zero   b c = refl
   a+/b+c/=/a+b/+c (suc a) b c
     rewrite a+/b+c/=/a+b/+c a b c
             = refl
