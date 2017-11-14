@@ -18,7 +18,7 @@ jobs:
           command: |
             git clone https://github.com/agda/agda-stdlib.git ~/agda-stdlib/
             mkdir ~/.agda
-            echo "~/agda-stdlib/stadard-library.agda-lib" >> ~/.agda/libraries
+            echo "~/agda-stdlib/standard-library.agda-lib" >> ~/.agda/libraries
             echo "standard-library" >> ~/.agda/defaults
       - run:
           name: Build theorems
