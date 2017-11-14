@@ -30,7 +30,7 @@ private
   a*b=b*a (suc a) b
     rewrite a*b=b*a a b
           | a+a*b=a*++a b a
-          = refl
+            = refl
 
 ------------------------------------------------------------------------
 -- public aliases
