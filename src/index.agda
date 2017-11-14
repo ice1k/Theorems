@@ -40,15 +40,22 @@ import Logics.Not
   using (not-not) -- law that negatives make a positive
 
 -- vectors
+--- law that reverse twice returns the original vector
 import Vecs.Reverse
-  using (vec-rev-rev) -- law that reverse twice returns the original list
+  using (vec-rev-rev)
 
 -- lists
+--- law that reverse twice returns the original vector
 import Lists.Reverse
-  using (list-rev-rev) -- law that reverse twice returns the original vector
+  using (list-rev-rev)
 
 -- isomorphisms
 --- natrual numbers and others
 import Isos.NatLike
   using (iso-nat-vec) -- with vector
   using (iso-nat-list) -- with list
+
+-- groups
+--- s3 group
+import Groups.Symm.S3
+  using (s3-property-1) -- given xxx=e, yy=e, yx=xxy, prove aba≡b
