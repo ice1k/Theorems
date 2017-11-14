@@ -8,7 +8,7 @@ open import Relation.Nullary
 private
 
   a=¬∘¬a : ∀ {ℓ} {A : Set ℓ} → A → ¬ (¬ A)
-  a=¬∘¬a a = λ z → z a
+  a=¬∘¬a a z = z a
 
 ------------------------------------------------------------------------
 -- public aliases
