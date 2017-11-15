@@ -88,7 +88,7 @@ private
     rewrite nat-add-comm a (nsuc (b :+: c))
           | nat-add-comm (b :+: c) a
           | nat-add-assoc a b c
-          = refl
+            = refl
   a+/b+c/=/a+b/+c (+ nsuc a) (+ nsuc b) -[1+ c ]
     rewrite a+/b-c/=a+b-c (nsuc a) b c
           | nat-add-assoc-flip a 1 b
