@@ -7,10 +7,10 @@ open import Agda.Builtin.Equality
 
 private
 
-  s3-xyx=y : ∀ {n} {S3 : Set n} (x y e : S3) (_×_ : S3 → S3 → S3) →
+  s3-xyx=y : ∀ {ℓ} {S3 : Set ℓ} (x y e : S3) (_×_ : S3 → S3 → S3) →
        (∀ a b c → (a × b) × c ≡ a × (b × c)) →
        (∀ a b c → a × (b × c) ≡ (a × b) × c) →
-       (∀ a → e × a ≡ a) →
+       (∀ x → e × x ≡ x) →
        ((x × x) × x ≡ e) →
        (y × y ≡ e) →
        (y × x ≡ (x × x) × y) →
@@ -26,10 +26,10 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-s3-property-1 : ∀ {n} {S3 : Set n} (x y e : S3) (_×_ : S3 → S3 → S3) →
+s3-property-1 : ∀ {ℓ} {S3 : Set ℓ} (x y e : S3) (_×_ : S3 → S3 → S3) →
     (∀ a b c → (a × b) × c ≡ a × (b × c)) →
     (∀ a b c → a × (b × c) ≡ (a × b) × c) →
-    (∀ a → e × a ≡ a) →
+    (∀ x → e × x ≡ x) →
     ((x × x) × x ≡ e) → (y × y ≡ e) → (y × x ≡ (x × x) × y) →
     ((x × y) × x ≡ y)
 s3-property-1 = s3-xyx=y

@@ -58,4 +58,4 @@ import Isos.NatLike
 -- groups
 --- s3 group
 import Groups.Symm.S3
-  using (s3-property-1) -- given xxx=e, yy=e, yx=xxy, prove aba≡b
+  using (s3-property-1) -- given xxx=e, yy=e, yx=xxy, prove xyx≡y
