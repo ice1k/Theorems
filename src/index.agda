@@ -24,7 +24,7 @@ import Ints.Add.Comm
   using (int-add-comm) -- commutative law
 import Ints.Add.Assoc
   using (int-add-assoc) -- associative law
-  using (int-add-assoc=flip) -- exchanged
+  using (int-add-assoc-flip) -- exchanged
 
 -- logics
 --- the "and" relations

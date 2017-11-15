@@ -104,5 +104,5 @@ private
 int-add-assoc : ∀ a b c → a + (b + c) ≡ a + b + c
 int-add-assoc = a+/b+c/=/a+b/+c
 
-int-add-assoc=flip : ∀ a b c → a + b + c ≡ a + (b + c)
-int-add-assoc=flip = exchanged
+int-add-assoc-flip : ∀ a b c → a + b + c ≡ a + (b + c)
+int-add-assoc-flip = exchanged
