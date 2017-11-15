@@ -41,6 +41,7 @@ import Logics.Or
 --- negations
 import Logics.Not
   using (not-not) -- law that negatives make a positive
+  using (contrapositive) -- contrapositive
 
 -- vectors
 --- law that reverse twice returns the original vector
