@@ -1,15 +1,8 @@
 module Vecs.Reverse where
 
-open import Data.Vec hiding (reverse)
-open import Data.Nat
+open import Vecs
+open import Nats
 open import Agda.Builtin.Equality
-
-------------------------------------------------------------------------
--- definitions
-
-reverse : ∀ {n m} {A : Set n} → Vec A m → Vec A m
-reverse [] = []
-reverse (x ∷ xs) = reverse xs ∷ʳ x
 
 ------------------------------------------------------------------------
 -- internal stuffs

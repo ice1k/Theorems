@@ -2,12 +2,11 @@ module Isos.NatLike where
 
 open import Isos.Isomorphism
 
-open import Data.Nat
-open import Data.Unit
+open import Nats
 open import Data.Product
 
 open import Agda.Builtin.Equality
-open import Relation.Binary.PropositionalEquality
+open import Agda.Builtin.Unit
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -16,7 +15,7 @@ private
 
   module WithList where
 
-  open import Data.List
+  open import Lists
 
   list→ℕ : List ⊤ → ℕ
   list→ℕ  []      = zero
@@ -28,7 +27,7 @@ private
 
   module WithVec where
 
-  open import Data.Vec
+  open import Vecs
 
   vec→ℕ′ : ∀ {n} → Vec ⊤ n → ℕ
   vec→ℕ′ {n}  []      = n

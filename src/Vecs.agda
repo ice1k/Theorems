@@ -1,0 +1,44 @@
+module Vecs where
+
+open import Nats
+
+infixr 5 _∷_ _++_ _∷ʳ_
+infix 4 _∈_ _⊛_
+
+data Vec {ℓ} (A : Set ℓ) : ℕ → Set ℓ where
+  []  : Vec A zero
+  _∷_ : ∀ {n} (x : A) (xs : Vec A n) → Vec A (suc n)
+
+data _∈_ {ℓ} {A : Set ℓ} : A → {n : ℕ} → Vec A n → Set ℓ where
+  here  : ∀ {n} {x}   {xs : Vec A n} → x ∈ x ∷ xs
+  there : ∀ {n} {x y} {xs : Vec A n} (x∈xs : x ∈ xs) → x ∈ y ∷ xs
+
+head : ∀ {ℓ n} {A : Set ℓ} → Vec A (suc n) → A
+head (x ∷ xs) = x
+
+tail : ∀ {ℓ n} {A : Set ℓ} → Vec A (suc n) → Vec A n
+tail (x ∷ xs) = xs
+
+[_] : ∀ {ℓ} {A : Set ℓ} → A → Vec A 1
+[ x ] = x ∷ []
+
+_++_ : ∀ {ℓ m n} {A : Set ℓ} → Vec A m → Vec A n → Vec A (m + n)
+[]       ++ ys = ys
+(x ∷ xs) ++ ys = x ∷ (xs ++ ys)
+
+_⊛_ : ∀ {ℓ b n} {A : Set ℓ} {B : Set b} →
+      Vec (A → B) n → Vec A n → Vec B n
+[]       ⊛ _        = []
+(f ∷ fs) ⊛ (x ∷ xs) = f x ∷ (fs ⊛ xs)
+
+replicate : ∀ {ℓ n} {A : Set ℓ} → A → Vec A n
+replicate {n = zero}  x = []
+replicate {n = suc n} x = x ∷ replicate x
+
+_∷ʳ_ : ∀ {ℓ n} {A : Set ℓ} → Vec A n → A → Vec A (suc n)
+[]       ∷ʳ y = [ y ]
+(x ∷ xs) ∷ʳ y = x ∷ (xs ∷ʳ y)
+
+reverse : ∀ {n m} {A : Set n} → Vec A m → Vec A m
+reverse [] = []
+reverse (x ∷ xs) = reverse xs ∷ʳ x

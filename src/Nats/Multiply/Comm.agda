@@ -1,6 +1,6 @@
 module Nats.Multiply.Comm where
 
-open import Data.Nat
+open import Nats
 open import Agda.Builtin.Equality
 
 open import Nats.Add.Comm

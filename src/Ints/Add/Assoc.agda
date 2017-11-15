@@ -1,7 +1,7 @@
 module Ints.Add.Assoc where
 
-open import Data.Integer
-open import Data.Nat renaming (suc to nsuc; _+_ to _:+:_)
+open import Ints
+open import Nats renaming (suc to nsuc; _+_ to _:+:_)
 
 open import Nats.Add.Assoc
 open import Nats.Add.Comm

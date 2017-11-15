@@ -1,7 +1,7 @@
 module Nats.Add.Assoc where
 
-open import Data.Nat
 open import Agda.Builtin.Equality
+open import Nats
 
 ------------------------------------------------------------------------
 -- internal stuffs

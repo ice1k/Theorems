@@ -1,15 +1,8 @@
 module Lists.Reverse where
 
-open import Data.List hiding (reverse)
-open import Data.Nat
+open import Lists
+open import Nats
 open import Agda.Builtin.Equality
-
-------------------------------------------------------------------------
--- definitions
-
-reverse : ∀ {n} {A : Set n} → List A → List A
-reverse [] = []
-reverse (x ∷ xs) = reverse xs ∷ʳ x
 
 ------------------------------------------------------------------------
 -- internal stuffs

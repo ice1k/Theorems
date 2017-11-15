@@ -1,6 +1,6 @@
 module Ints.Add.Comm where
 
-open import Data.Integer
+open import Ints
 
 open import Nats.Add.Comm
 
