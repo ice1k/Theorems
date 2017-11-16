@@ -1,27 +1,28 @@
 module Bools where
 
 open import Agda.Builtin.Bool public
+  renaming (Bool to 𝔹)
 
-not : Bool → Bool
+not : 𝔹 → 𝔹
 not true  = false
 not false = true
 
--- T : Bool → Set
+-- T : 𝔹 → Set
 -- T true  = ⊤
 -- T false = ⊥
 
-if_then_else_ : ∀ {a} {A : Set a} → Bool → A → A → A
-if true  then t else f = t
-if false then t else f = f
+if_then_else_ : ∀ {ℓ} {A : Set ℓ} → 𝔹 → A → A → A
+if true  then t else _ = t
+if false then _ else f = f
 
-_∧_ : Bool → Bool → Bool
+_∧_ : 𝔹 → 𝔹 → 𝔹
 true  ∧ b = b
-false ∧ b = false
+false ∧ _ = false
 
-_∨_ : Bool → Bool → Bool
-true  ∨ b = true
+_∨_ : 𝔹 → 𝔹 → 𝔹
+true  ∨ _ = true
 false ∨ b = b
 
-_xor_ : Bool → Bool → Bool
+_xor_ : 𝔹 → 𝔹 → 𝔹
 true  xor b = not b
 false xor b = b

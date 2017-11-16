@@ -18,7 +18,7 @@ _++_ : ∀ {ℓ} {A : Set ℓ} → List A → List A → List A
 _∷ʳ_ : ∀ {ℓ} {A : Set ℓ} → List A → A → List A
 xs ∷ʳ x = xs ++ [ x ]
 
-null : ∀ {ℓ} {A : Set ℓ} → List A → Bool
+null : ∀ {ℓ} {A : Set ℓ} → List A → 𝔹
 null []       = true
 null (x ∷ xs) = false
 
