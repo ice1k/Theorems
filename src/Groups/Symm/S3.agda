@@ -1,7 +1,6 @@
 module Groups.Symm.S3 where
 
 open import Agda.Builtin.Equality
-open import Data.Maybe
 
 ------------------------------------------------------------------------
 -- definitions
@@ -14,7 +13,7 @@ bin-op A = A → A → A
 
 private
 
-  record S3 {ℓ} (A : Set ℓ) : Set ℓ where
+  record S₃ {ℓ} (A : Set ℓ) : Set ℓ where
     constructor ⟨_,_,_⟩-⟨_,_,_⟩-⟨_,_,_⟩
     infixl 5 _×_
     field
@@ -33,8 +32,8 @@ private
     assocᵣ : ∀ a b c → a × (b × c) ≡ a × b × c
     assocᵣ a b c rewrite assocₗ a b c = refl
 
-    s3-xyx=y : law-xyx=y
-    s3-xyx=y
+    xyx=y : law-xyx=y
+    xyx=y
       rewrite assocₗ x y x
             | law-yx=xxy
             | assocᵣ x (x × x) y
@@ -45,5 +44,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-s3-property-1 : ∀ {ℓ} (A : S3 (Set ℓ)) → S3.law-xyx=y A
-s3-property-1 = S3.s3-xyx=y
+s3-property-1 : ∀ {ℓ} (A : S₃ (Set ℓ)) → S₃.law-xyx=y A
+s3-property-1 = S₃.xyx=y
