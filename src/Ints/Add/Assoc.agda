@@ -8,7 +8,7 @@ open import Nats.Add.Comm
 
 open import Ints.Add.Comm
 
-open import Agda.Builtin.Equality
+open import Equality
 
 ------------------------------------------------------------------------
 -- internal stuffs

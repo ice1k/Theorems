@@ -4,7 +4,7 @@ open import Ints
 
 open import Nats.Add.Comm
 
-open import Agda.Builtin.Equality
+open import Equality
 
 ------------------------------------------------------------------------
 -- internal stuffs

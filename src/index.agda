@@ -29,7 +29,6 @@ import Ints.Add.Assoc
 -- non-negative rationals
 --- some properties
 import Rationals.Properties
-  using (no-infinity) -- infinity can't be defined
   -- if b is not zero, any number times b then div
   -- by b will produce the original number
   using (times-div-id)

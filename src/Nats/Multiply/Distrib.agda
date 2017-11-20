@@ -1,7 +1,7 @@
 module Nats.Multiply.Distrib where
 
 open import Nats
-open import Agda.Builtin.Equality
+open import Equality
 
 open import Nats.Multiply.Comm
 open import Nats.Add.Assoc

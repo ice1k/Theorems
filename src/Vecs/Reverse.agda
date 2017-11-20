@@ -2,7 +2,7 @@ module Vecs.Reverse where
 
 open import Vecs
 open import Nats
-open import Agda.Builtin.Equality
+open import Equality
 
 ------------------------------------------------------------------------
 -- internal stuffs

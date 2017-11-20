@@ -5,7 +5,7 @@ open import Isos.Isomorphism
 open import Nats
 open import Data.Product
 
-open import Agda.Builtin.Equality
+open import Equality
 open import Agda.Builtin.Unit
 
 ------------------------------------------------------------------------

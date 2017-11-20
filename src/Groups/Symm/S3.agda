@@ -1,6 +1,6 @@
 module Groups.Symm.S3 where
 
-open import Agda.Builtin.Equality
+open import Equality
 
 ------------------------------------------------------------------------
 -- definitions

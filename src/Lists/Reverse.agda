@@ -2,7 +2,7 @@ module Lists.Reverse where
 
 open import Lists
 open import Nats
-open import Agda.Builtin.Equality
+open import Equality
 
 ------------------------------------------------------------------------
 -- internal stuffs

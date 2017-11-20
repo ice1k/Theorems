@@ -2,7 +2,7 @@ module PosNat where
 
 open import Nats
 open import Data.Product
-open import Agda.Builtin.Equality
+open import Equality
 
 data ℕ⁺ : Set where
   psuc : ℕ → ℕ⁺

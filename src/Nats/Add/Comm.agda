@@ -1,6 +1,6 @@
 module Nats.Add.Comm where
 
-open import Agda.Builtin.Equality
+open import Equality
 open import Nats
 
 ------------------------------------------------------------------------
