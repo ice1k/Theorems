@@ -13,7 +13,7 @@ private
   a*b÷b=a _ _ _ = refl
 
   _÷0 : ∀ {a} → ℚ a 0 → ⊥
-  (_ ÷ .0 ⟨ _ , () ⟩) ÷0
+  (_ ÷ .0 ⟨ () ⟩) ÷0
 
 no-infinity : ∀ {a} → ℚ a 0 → ⊥
 no-infinity = _÷0
