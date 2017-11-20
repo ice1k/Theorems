@@ -26,6 +26,14 @@ import Ints.Add.Assoc
   using (int-add-assoc) -- associative law
   using (int-add-assoc-flip) -- exchanged
 
+-- non-negative rationals
+--- some properties
+import Rationals.Properties
+  using (no-infinity) -- infinity can't be defined
+  -- if b is not zero, any number times b then div
+  -- by b will produce the original number
+  using (times-div-id)
+
 -- logics
 --- the "and" relations
 import Logics.And
@@ -40,18 +48,19 @@ import Logics.Or
 
 --- negations
 import Logics.Not
-  using (not-not) -- law that negatives make a positive
+  -- law that negative twice will make a positive
+  using (not-not)
   using (contrapositive) -- contrapositive
 
 -- vectors
 --- reverse twice gives the original vector
 import Vecs.Reverse
-  using (vec-rev-rev)
+  using (vec-rev-rev-id)
 
 -- lists
 --- reverse twice gives the original vector
 import Lists.Reverse
-  using (list-rev-rev)
+  using (list-rev-rev-id)
 
 -- isomorphisms
 --- natrual numbers and others

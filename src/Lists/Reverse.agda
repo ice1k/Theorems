@@ -32,5 +32,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-list-rev-rev : ∀ {n} {A : Set n} (v : List A) → reverse (reverse v) ≡ v
-list-rev-rev = rev∘rev=id
+list-rev-rev-id : ∀ {n} {A : Set n} (v : List A) → reverse (reverse v) ≡ v
+list-rev-rev-id = rev∘rev=id
