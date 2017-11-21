@@ -33,6 +33,10 @@ import Rationals.Properties
   -- by b will produce the original number
   using (times-div-id)
 
+-- additions
+import Rationals.Add.Comm
+  using (rational-add-comm) -- commutative law
+
 -- logics
 --- the "and" relations
 import Logics.And

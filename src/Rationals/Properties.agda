@@ -11,13 +11,11 @@ open import Equality
 
 private
 
-  a*b÷b=a : ∀ a b {x} → b >0 →
-            a * b ÷ b ⟨ x ⟩ →ℕ ≡ (a , refl)
-  a*b÷b=a _ _ _ = refl
+  a*b÷b=a : ∀ a b → a * b ÷ b →ℕ ≡ (a , refl)
+  a*b÷b=a _ _ = refl
 
 ------------------------------------------------------------------------
 -- public aliases
 
-times-div-id : ∀ a b {x} → b >0 →
-               a * b ÷ b ⟨ x ⟩ →ℕ ≡ (a , refl)
+times-div-id : ∀ a b → a * b ÷ b →ℕ ≡ (a , refl)
 times-div-id = a*b÷b=a
