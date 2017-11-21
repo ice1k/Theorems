@@ -36,6 +36,9 @@ import Rationals.Properties
 -- additions
 import Rationals.Add.Comm
   using (rational-add-comm) -- commutative law
+import Rationals.Add.Assoc
+  using (rational-add-assoc) -- associative law
+  using (rational-add-assoc-flip) -- exchanged
 
 -- logics
 --- the "and" relations
