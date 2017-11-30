@@ -5,7 +5,7 @@ jobs:
       # terrorjack's awesome docker image
       # - image: terrorjack/rakuen:ghc-8.2.1.20171108
       # - image: terrorjack/meikyu:ghc-8.2.1.20171108
-      - image: terrorjack/meikyu:nightly-2017-11-20
+      - image: terrorjack/meikyu:nightly-2017-11-25
 
     steps:
       - checkout
