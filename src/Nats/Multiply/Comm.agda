@@ -20,7 +20,7 @@ private
   a+a*b=a*++b (suc a) b
     rewrite nat-add-comm b (a * suc b)
           | nat-add-comm b (a * b)
-          | nat-add-assoc-flip a (a * b) b
+          | sym (nat-add-assoc a (a * b) b)
           | a+a*b=a*++b a b
             = refl
 

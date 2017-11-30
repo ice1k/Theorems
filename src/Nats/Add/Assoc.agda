@@ -14,15 +14,8 @@ private
     rewrite a+/b+c/=/a+b/+c a b c
             = refl
 
-  assoc-flip : ∀ a b c → a + (b + c) ≡ a + b + c
-  assoc-flip a b c
-    rewrite a+/b+c/=/a+b/+c a b c = refl
-
 ------------------------------------------------------------------------
 -- public aliases
 
 nat-add-assoc : ∀ a b c → a + b + c ≡ a + (b + c)
 nat-add-assoc = a+/b+c/=/a+b/+c
-
-nat-add-assoc-flip : ∀ a b c → a + (b + c) ≡ a + b + c
-nat-add-assoc-flip = assoc-flip

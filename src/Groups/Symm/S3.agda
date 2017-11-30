@@ -19,7 +19,7 @@ private
     field
       x y {e} : A
       _×_ : bin-op A
-      assocₗ : ∀ a b c → a × b × c ≡ a × (b × c)      
+      assoc : ∀ a b c → a × b × c ≡ a × (b × c)      
       idₗ : ∀ n → n × e ≡ n
       idᵣ : ∀ n → e × n ≡ n
       law-xxx=e : x × x × x ≡ e
@@ -29,15 +29,12 @@ private
     law-xyx=y : Set ℓ
     law-xyx=y = x × y × x ≡ y
 
-    assocᵣ : ∀ a b c → a × (b × c) ≡ a × b × c
-    assocᵣ a b c rewrite assocₗ a b c = refl
-
     xyx=y : law-xyx=y
     xyx=y
-      rewrite assocₗ x y x
+      rewrite assoc x y x
             | law-yx=xxy
-            | assocᵣ x (x × x) y
-            | assocᵣ x x x
+            | sym (assoc x (x × x) y)
+            | sym (assoc x x x)
             | law-xxx=e
               = idᵣ y
 

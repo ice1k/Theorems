@@ -18,24 +18,17 @@ private
             = refl
 
   a*/b*c/=/a*b/*c : ∀ a b c → a * b * c ≡ a * (b * c)
-  assoc-flip : ∀ a b c → a * (b * c) ≡ a * b * c
-
   a*/b*c/=/a*b/*c  zero   b c = refl
   a*/b*c/=/a*b/*c (suc a) b c
     rewrite a*/b*c/=/a*b/*c a b c
           | nat-multiply-comm a b
-          | nat-multiply-distrib-flip b (b * a) c
-          | assoc-flip a b c
+          | sym (nat-multiply-distrib b (b * a) c)
+          | sym (a*/b*c/=/a*b/*c a b c)
           | nat-multiply-comm a b
             = refl
-
-  assoc-flip a b c rewrite a*/b*c/=/a*b/*c a b c = refl
 
 ------------------------------------------------------------------------
 -- public aliases
 
 nat-multiply-assoc : ∀ a b c → a * b * c ≡ a * (b * c)
 nat-multiply-assoc = a*/b*c/=/a*b/*c
-
-nat-multiply-assoc-flip : ∀ a b c → a * (b * c) ≡ a * b * c
-nat-multiply-assoc-flip = assoc-flip

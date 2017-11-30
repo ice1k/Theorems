@@ -17,7 +17,7 @@ private
   a/c+b/c=a*b/c : ∀ a b c → a ÷ c + b ÷ c ≡ (a :+: b) ÷ c
   a/c+b/c=a*b/c a b c
     rewrite (a :+: b) ÷ c ↑ c
-          | nat-multiply-distrib-flip a b c
+          | sym (nat-multiply-distrib a b c)
             = refl
 
   a+b=b+a : ∀ x y → x + y ≡ y + x

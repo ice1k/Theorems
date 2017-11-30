@@ -22,9 +22,9 @@ private
           | bx ÷ by ↑ (ay * cy)
           | cx ÷ cy ↑ (ay * by)
           | nat-multiply-assoc ay by cy
-          | nat-multiply-distrib-flip (bx * cy) (cx * by) ay
-          | nat-multiply-distrib-flip (ax * by) (bx * ay) cy
-          | nat-add-assoc-flip (ax * (by * cy)) (bx * cy * ay) (cx * by * ay)
+          | sym (nat-multiply-distrib (bx * cy) (cx * by) ay)
+          | sym (nat-multiply-distrib (ax * by) (bx * ay) cy)
+          | sym (nat-add-assoc (ax * (by * cy)) (bx * cy * ay) (cx * by * ay))
           | nat-multiply-assoc ax by cy
           | nat-multiply-comm ay by
           | nat-multiply-assoc cx by ay
@@ -33,11 +33,5 @@ private
           | nat-multiply-comm cy ay
             = refl
 
-  assoc-flip : ∀ a b c → (a + b) + c ≡ a + (b + c)
-  assoc-flip a b c rewrite a+b+c=a+/b+c/ a b c = refl
-
 rational-add-assoc : ∀ a b c → a + (b + c) ≡ (a + b) + c
 rational-add-assoc = a+b+c=a+/b+c/
-
-rational-add-assoc-flip : ∀ a b c → (a + b) + c ≡ a + (b + c)
-rational-add-assoc-flip = assoc-flip

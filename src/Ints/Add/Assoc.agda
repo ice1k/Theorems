@@ -79,7 +79,7 @@ private
   a+/b+c/=/a+b/+c (+ nsuc a) -[1+ b ] (+ nsuc c)
     rewrite a-b+c=a+c-b a b (nsuc c)
           | a+/b-c/=a+b-c (nsuc a) c b
-          | nat-add-assoc-flip a 1 c
+          | sym (nat-add-assoc a 1 c)
           | nat-add-comm a 1
             = refl
   a+/b+c/=/a+b/+c -[1+ a ] (+ nsuc b) (+ nsuc c)
@@ -91,18 +91,12 @@ private
             = refl
   a+/b+c/=/a+b/+c (+ nsuc a) (+ nsuc b) -[1+ c ]
     rewrite a+/b-c/=a+b-c (nsuc a) b c
-          | nat-add-assoc-flip a 1 b
+          | sym (nat-add-assoc a 1 b)
           | nat-add-comm a 1
             = refl
-
-  exchanged : ∀ a b c → a + b + c ≡ a + (b + c)
-  exchanged a b c rewrite a+/b+c/=/a+b/+c a b c = refl
 
 ------------------------------------------------------------------------
 -- public aliases
 
 int-add-assoc : ∀ a b c → a + (b + c) ≡ a + b + c
 int-add-assoc = a+/b+c/=/a+b/+c
-
-int-add-assoc-flip : ∀ a b c → a + b + c ≡ a + (b + c)
-int-add-assoc-flip = exchanged

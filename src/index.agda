@@ -4,7 +4,6 @@ module index where
 --- additions
 import Nats.Add.Assoc
   using (nat-add-assoc) -- associative law
-  using (nat-add-assoc-flip) -- exchanged
 import Nats.Add.Comm
   using (nat-add-comm) -- commutative law
 
@@ -13,10 +12,8 @@ import Nats.Multiply.Comm
   using (nat-multiply-comm) -- commutative law
 import Nats.Multiply.Distrib
   using (nat-multiply-distrib) -- distributive law
-  using (nat-multiply-distrib-flip) -- exchanged
 import Nats.Multiply.Assoc
   using (nat-multiply-assoc) -- associative law
-  using (nat-multiply-assoc-flip) -- exchanged
 
 -- integers
 --- additions
@@ -24,7 +21,6 @@ import Ints.Add.Comm
   using (int-add-comm) -- commutative law
 import Ints.Add.Assoc
   using (int-add-assoc) -- associative law
-  using (int-add-assoc-flip) -- exchanged
 
 -- non-negative rationals
 --- some properties
@@ -38,7 +34,6 @@ import Rationals.Add.Comm
   using (rational-add-comm) -- commutative law
 import Rationals.Add.Assoc
   using (rational-add-assoc) -- associative law
-  using (rational-add-assoc-flip) -- exchanged
 
 -- logics
 --- the "and" relations
