@@ -35,6 +35,10 @@ import Rationals.Add.Comm
 import Rationals.Add.Assoc
   using (rational-add-assoc) -- associative law
 
+-- multiplications
+import Rationals.Multiply.Comm
+  using (rational-multiply-comm) -- commutative law
+
 -- logics
 --- the "and" relations
 import Logics.And

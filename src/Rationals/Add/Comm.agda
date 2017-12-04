@@ -1,8 +1,8 @@
 module Rationals.Add.Comm where
 
 open import Equality
-open import Nats using (_*_; zero; ℕ)
-                 renaming (suc to s; _+_ to _:+:_)
+open import Nats using (zero; ℕ)
+                 renaming (suc to s; _+_ to _:+:_; _*_ to _:*:_)
 open import Rationals
 open import Rationals.Properties
 open import Nats.Add.Comm
@@ -24,8 +24,8 @@ private
   a+b=b+a (a ÷ c) (b ÷ d)
     rewrite a ÷ c ↑ d
           | b ÷ d ↑ c
-          | a/c+b/c=a*b/c (a * d) (b * c) (d * c)
-          | nat-add-comm (a * d) (b * c)
+          | a/c+b/c=a*b/c (a :*: d) (b :*: c) (d :*: c)
+          | nat-add-comm (a :*: d) (b :*: c)
           | nat-multiply-comm c d
             = refl
 
