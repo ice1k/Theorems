@@ -3,6 +3,7 @@ module Vecs.Reverse where
 open import Vecs
 open import Nats
 open import Equality
+open import Function
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -25,7 +26,7 @@ private
   rev∘rev=id : ∀ {n m} {A : Set n} (v : Vec A m) → reverse (reverse v) ≡ v
   rev∘rev=id [] = refl
   rev∘rev=id (x ∷ xs)
-    rewrite rev$v:a=a:rev$v x (reverse xs)
+    rewrite rev$v:a=a:rev$v x $ reverse xs
           | rev∘rev=id xs
             = refl
 

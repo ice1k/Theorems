@@ -3,6 +3,7 @@ module Lists.Reverse where
 open import Lists
 open import Nats
 open import Equality
+open import Function
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -25,7 +26,7 @@ private
   rev∘rev=id : ∀ {n} {A : Set n} (v : List A) → reverse (reverse v) ≡ v
   rev∘rev=id [] = refl
   rev∘rev=id (x ∷ xs)
-    rewrite rev$v:a=a:rev$v x (reverse xs)
+    rewrite rev$v:a=a:rev$v x $ reverse xs
           | rev∘rev=id xs
             = refl
 

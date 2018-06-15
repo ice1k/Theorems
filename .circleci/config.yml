@@ -19,7 +19,6 @@ jobs:
           name: Install the Agda Standard lib
           command: |
             git clone https://github.com/agda/agda-stdlib.git ~/agda-stdlib/
-            rm ~/agda-stdlib/src/index.agda
             mkdir ~/.agda
             echo "~/agda-stdlib/standard-library.agda-lib" >> ~/.agda/libraries
             echo "standard-library" >> ~/.agda/defaults
