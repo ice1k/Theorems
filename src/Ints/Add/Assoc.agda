@@ -9,6 +9,7 @@ open import Nats.Add.Comm
 open import Ints.Add.Comm
 
 open import Equality
+open import Function
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -44,7 +45,7 @@ private
 
   a+/b-c/=a+b-c : ∀ a b c → + a + (b ⊖ c) ≡ a :+: b ⊖ c
   a+/b-c/=a+b-c a b c
-    rewrite int-add-comm (+ a) (b ⊖ c)
+    rewrite int-add-comm (+ a) $ b ⊖ c
           | a-b+c=a+c-b b c a
           | nat-add-comm a b
             = refl
@@ -57,7 +58,7 @@ private
 
   -a+/b-c/=b-/a+c/ : ∀ a b c → -[1+ a ] + (b ⊖ c) ≡ b ⊖ (nsuc a :+: c)
   -a+/b-c/=b-/a+c/ a b c
-    rewrite int-add-comm -[1+ a ] (b ⊖ c)
+    rewrite int-add-comm -[1+ a ] $ b ⊖ c
           | b-c-a=b-/c+a/ a b c
           | nat-add-comm a c
             = refl
@@ -77,21 +78,21 @@ private
   a+/b+c/=/a+b/+c (+ nsuc a) -[1+ b ] -[1+ c ]
     rewrite b-c-a=b-/c+a/ c a b = refl
   a+/b+c/=/a+b/+c (+ nsuc a) -[1+ b ] (+ nsuc c)
-    rewrite a-b+c=a+c-b a b (nsuc c)
+    rewrite a-b+c=a+c-b a b $ nsuc c
           | a+/b-c/=a+b-c (nsuc a) c b
-          | sym (nat-add-assoc a 1 c)
+          | sym $ nat-add-assoc a 1 c
           | nat-add-comm a 1
             = refl
   a+/b+c/=/a+b/+c -[1+ a ] (+ nsuc b) (+ nsuc c)
     rewrite a-b+c=a+c-b b a (nsuc c) = refl
   a+/b+c/=/a+b/+c -[1+ a ] -[1+ b ] -[1+ c ]
-    rewrite nat-add-comm a (nsuc (b :+: c))
+    rewrite nat-add-comm a $ nsuc $ b :+: c
           | nat-add-comm (b :+: c) a
           | nat-add-assoc a b c
             = refl
   a+/b+c/=/a+b/+c (+ nsuc a) (+ nsuc b) -[1+ c ]
     rewrite a+/b-c/=a+b-c (nsuc a) b c
-          | sym (nat-add-assoc a 1 b)
+          | sym $ nat-add-assoc a 1 b
           | nat-add-comm a 1
             = refl
 

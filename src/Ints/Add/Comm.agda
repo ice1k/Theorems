@@ -1,7 +1,6 @@
 module Ints.Add.Comm where
 
 open import Ints
-
 open import Nats.Add.Comm
 
 open import Equality

@@ -1,5 +1,7 @@
 module Logics.And where
 
+open import Function
+
 ------------------------------------------------------------------------
 -- definitions
 
@@ -18,10 +20,10 @@ p ⇔ q = (p → q) ∧ (q → p)
 private
 
   ∧-comm′ : ∀ {P Q} → (P ∧ Q) → (Q ∧ P)
-  ∧-comm′ (∧-intro p q) = (∧-intro q p)
+  ∧-comm′ (∧-intro p q) = ∧-intro q p
 
   ∧-assoc₀ : ∀ {P Q R} → ((P ∧ Q) ∧ R) → (P ∧ (Q ∧ R))
-  ∧-assoc₀ (∧-intro (∧-intro p q) r) = ∧-intro p (∧-intro q r)
+  ∧-assoc₀ (∧-intro (∧-intro p q) r) = ∧-intro p $ ∧-intro q r
 
   ∧-assoc₁ : ∀ {P Q R} → (P ∧ (Q ∧ R)) → ((P ∧ Q) ∧ R)
   ∧-assoc₁ (∧-intro p (∧-intro q r)) = ∧-intro (∧-intro p q) r

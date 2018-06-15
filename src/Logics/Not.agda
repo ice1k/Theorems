@@ -1,5 +1,6 @@
 module Logics.Not where
 
+open import Function
 open import Relation.Nullary
 
 ------------------------------------------------------------------------
@@ -11,7 +12,7 @@ private
   a=¬∘¬a a z = z a
 
   /p→q/→¬/p→¬q/ : ∀ {ℓ₀ ℓ₁} {P : Set ℓ₀} {Q : Set ℓ₁} → (P → Q) → (¬ Q → ¬ P)
-  /p→q/→¬/p→¬q/ p→q ¬q p = ¬q (p→q p)
+  /p→q/→¬/p→¬q/ p→q ¬q p = ¬q $ p→q p
 
 ------------------------------------------------------------------------
 -- public aliases

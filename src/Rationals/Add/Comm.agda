@@ -1,6 +1,8 @@
 module Rationals.Add.Comm where
 
 open import Equality
+open import Function
+
 open import Nats using (zero; ℕ)
                  renaming (suc to s; _+_ to _:+:_; _*_ to _:*:_)
 open import Rationals
@@ -17,15 +19,15 @@ private
   a/c+b/c=a*b/c : ∀ a b c → a ÷ c + b ÷ c ≡ (a :+: b) ÷ c
   a/c+b/c=a*b/c a b c
     rewrite (a :+: b) ÷ c ↑ c
-          | sym (nat-multiply-distrib a b c)
+          | sym $ nat-multiply-distrib a b c
             = refl
 
   a+b=b+a : ∀ x y → x + y ≡ y + x
   a+b=b+a (a ÷ c) (b ÷ d)
     rewrite a ÷ c ↑ d
           | b ÷ d ↑ c
-          | a/c+b/c=a*b/c (a :*: d) (b :*: c) (d :*: c)
-          | nat-add-comm (a :*: d) (b :*: c)
+          | a/c+b/c=a*b/c (a :*: d) (b :*: c) $ d :*: c
+          | nat-add-comm (a :*: d) $ b :*: c
           | nat-multiply-comm c d
             = refl
 

@@ -2,6 +2,7 @@ module Nats.Multiply.Comm where
 
 open import Nats
 open import Equality
+open import Function
 
 open import Nats.Add.Comm
 open import Nats.Add.Assoc
@@ -18,9 +19,9 @@ private
   a+a*b=a*++b : ∀ a b → a + a * b ≡ a * suc b
   a+a*b=a*++b  zero   _ = refl
   a+a*b=a*++b (suc a) b
-    rewrite nat-add-comm b (a * suc b)
-          | nat-add-comm b (a * b)
-          | sym (nat-add-assoc a (a * b) b)
+    rewrite nat-add-comm b $ a * suc b
+          | nat-add-comm b $ a * b
+          | sym $ nat-add-assoc a (a * b) b
           | a+a*b=a*++b a b
             = refl
 

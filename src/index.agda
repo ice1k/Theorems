@@ -8,6 +8,7 @@ import Nats.Add.Comm
   using (nat-add-comm) -- commutative law
 import Nats.Add.Invert
   using (nat-add-invert) -- a + a == b + b implies a == b
+  using (nat-add-invert-1) -- a + 1 == b + 1 implies a == b
 
 --- multiplications
 import Nats.Multiply.Comm
@@ -18,17 +19,25 @@ import Nats.Multiply.Assoc
   using (nat-multiply-assoc) -- associative law
 
 -- integers
+--- some properties
+import Ints.Properties
+  using (eq-int-to-nat) -- for natrual number a, + a == + a implis a == a
+  using (eq-neg-int-to-nat) -- for natrual number a, - a == - a implis a == a
+  using (eq-nat-to-int) -- for natrual number a, a == a implis + a == + a
+  using (eq-neg-nat-to-int) -- for natrual number a, a == a implis - a == - a
+
 --- additions
 import Ints.Add.Comm
   using (int-add-comm) -- commutative law
 import Ints.Add.Assoc
   using (int-add-assoc) -- associative law
+import Ints.Add.Invert
+  using (int-add-invert) -- a + a == b + b implis a == b
 
 -- non-negative rationals
 --- some properties
 import Rationals.Properties
-  -- if b is not zero, any number times b then div
-  -- by b will produce the original number
+  -- if b is not zero, n times b div b is the original number
   using (times-div-id)
 
 -- additions

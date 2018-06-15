@@ -1,5 +1,6 @@
 module Logics.Or where
 
+open import Function
 open import Logics.And
 
 ------------------------------------------------------------------------
@@ -26,12 +27,12 @@ private
 
   ∨-assoc₀ : ∀ {P Q R} → ((P ∨ Q) ∨ R) → (P ∨ (Q ∨ R))
   ∨-assoc₀ (∨-intro₀ (∨-intro₀ x)) = ∨-intro₀ x
-  ∨-assoc₀ (∨-intro₀ (∨-intro₁ x)) = ∨-intro₁ (∨-intro₀ x)
-  ∨-assoc₀ (∨-intro₁ x) = ∨-intro₁ (∨-intro₁ x)
+  ∨-assoc₀ (∨-intro₀ (∨-intro₁ x)) = ∨-intro₁ $ ∨-intro₀ x
+  ∨-assoc₀ (∨-intro₁ x) = ∨-intro₁ $ ∨-intro₁ x
 
   ∨-assoc₁ : ∀ {P Q R} → (P ∨ (Q ∨ R)) → ((P ∨ Q) ∨ R)
-  ∨-assoc₁ (∨-intro₀ x) = ∨-intro₀ (∨-intro₀ x)
-  ∨-assoc₁ (∨-intro₁ (∨-intro₀ x)) = ∨-intro₀ (∨-intro₁ x)
+  ∨-assoc₁ (∨-intro₀ x) = ∨-intro₀ $ ∨-intro₀ x
+  ∨-assoc₁ (∨-intro₁ (∨-intro₀ x)) = ∨-intro₀ $ ∨-intro₁ x
   ∨-assoc₁ (∨-intro₁ (∨-intro₁ x)) = ∨-intro₁ x
 
   ∨-elim : ∀ {P Q n} {R : Set n} → (P → R) → (Q → R) → (P ∨ Q) → R

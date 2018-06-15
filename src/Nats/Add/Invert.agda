@@ -10,14 +10,14 @@ open import Function
 
 private
 
+  lemma′ : ∀ a b → (suc a ≡ suc b) → (a ≡ b)
+  lemma′ _ _ refl = refl
+
   lemma : ∀ a b → (suc (a + suc a) ≡ suc (b + suc b)) → (a + a ≡ b + b)
   lemma a b
     rewrite nat-add-comm a $ suc a
           | nat-add-comm b $ suc b
             = lemma′ (a + a) (b + b) ∘ lemma′ (suc $ a + a) (suc $ b + b)
-    where
-      lemma′ : ∀ a b → (suc a ≡ suc b) → (a ≡ b)
-      lemma′ _ _ refl = refl
 
   +-invert : ∀ a b → (a + a ≡ b + b) → a ≡ b
   +-invert zero zero ev = refl
@@ -31,3 +31,6 @@ private
 
 nat-add-invert : ∀ a b → (a + a ≡ b + b) → a ≡ b
 nat-add-invert = +-invert
+
+nat-add-invert-1 : ∀ a b → (suc a ≡ suc b) → (a ≡ b)
+nat-add-invert-1 = lemma′
