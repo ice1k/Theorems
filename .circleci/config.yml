@@ -5,7 +5,7 @@ jobs:
       # terrorjack's awesome docker image
       # - image: terrorjack/rakuen:ghc-8.2.1.20171108
       # - image: terrorjack/meikyu:ghc-8.2.1.20171108
-      - image: terrorjack/meikyu:nightly-2017-11-25
+      - image: terrorjack/meikyu:nightly-2017-12-05
 
     steps:
       - checkout
@@ -23,9 +23,7 @@ jobs:
             mkdir ~/.agda
             echo "~/agda-stdlib/standard-library.agda-lib" >> ~/.agda/libraries
             echo "standard-library" >> ~/.agda/defaults
+
       - run:
           name: Build theorems
           command: agda src/index.agda
-      - run:
-          name: Build html
-          command: agda --html src/index.agda

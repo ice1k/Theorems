@@ -6,6 +6,8 @@ import Nats.Add.Assoc
   using (nat-add-assoc) -- associative law
 import Nats.Add.Comm
   using (nat-add-comm) -- commutative law
+import Nats.Add.Invert
+  using (nat-add-invert) -- a + a == b + b implies a == b
 
 --- multiplications
 import Nats.Multiply.Comm
