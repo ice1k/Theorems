@@ -24,15 +24,14 @@ private
               $ nat-add-invert-1 (a :+: a) (b :+: b)
               $ eq-neg-int-to-nat (nsuc $ a :+: a) (nsuc $ b :+: b) ev = refl
 
-  impossible : ∀ a b → (+ a + + a ≡ -[1+ b ] + -[1+ b ]) → (+ a + + a ≢ -[1+ b ] + -[1+ b ])
+  impossible : ∀ a b → (+ a + + a ≡ -[1+ b ] + -[1+ b ]) → ⊥
   impossible a b ()
 
   +-invert : ∀ a b → (a + a ≡ b + b) → a ≡ b
   +-invert (+   a ) (+   b ) ev
     rewrite nat-add-invert a b $ nat→int a b ev = refl
-  +-invert (+   a ) -[1+ b ] ev = ⊥-elim $ impossible a b ev ev
-  +-invert -[1+ a ] (+   b ) ev = let ev′ = sym ev
-                                  in ⊥-elim $ impossible b a ev′ ev′
+  +-invert (+   a ) -[1+ b ] ev = ⊥-elim $ impossible a b ev
+  +-invert -[1+ a ] (+   b ) ev = ⊥-elim $ impossible b a $ sym ev
   +-invert -[1+ a ] -[1+ b ] ev
     rewrite nat-add-invert a b $ nat→int a b $ nat→int′ a b ev = refl
 
