@@ -19,3 +19,4 @@ private
 
 nat-add-assoc : ∀ a b c → a + b + c ≡ a + (b + c)
 nat-add-assoc = a+/b+c/=/a+b/+c
+
