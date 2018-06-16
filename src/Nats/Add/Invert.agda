@@ -23,8 +23,7 @@ private
   +-invert zero zero ev = refl
   +-invert zero (suc b) ()
   +-invert (suc a) zero ()
-  +-invert (suc a) (suc b) ev
-    rewrite +-invert a b $ lemma a b ev = refl
+  +-invert (suc a) (suc b) = cong suc ∘ +-invert a b ∘ lemma a b
 
 ------------------------------------------------------------------------
 -- public aliases
