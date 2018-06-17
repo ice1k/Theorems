@@ -4,6 +4,7 @@ open import Equality
 open import Nats
 open import Nats.Add.Comm
 open import Function
+import Relation.Binary.PropositionalEquality
 
 ------------------------------------------------------------------------
 -- internal stuffs
