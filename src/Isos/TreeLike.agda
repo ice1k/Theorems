@@ -26,22 +26,22 @@ private
   tree⁷->tree (∅ , ∅ , ∅ , ∅ , ∅ , ∅ , [ [ [ [ a , b ] , c ] , d ] , e ])
               = ∅′ ,, a ,, b ,, c ,, d ,, e
   tree⁷->tree (∅  , ∅  , ∅  , ∅  , ∅  , ∅  , ∅′) = ∅′
-  tree⁷->tree (∅  , ∅  , ∅  , ∅  , ∅  , t5 , t6)
-              = t5 ,, t6 ,, ∅′ ,, ∅′ ,, ∅′ ,, ∅′ ,, ∅′
-  tree⁷->tree (∅  , ∅  , ∅  , ∅  , [ a , b ] , t5 , t6)
-              = ∅′ ,, t6 ,, t5 ,, a ,, b
-  tree⁷->tree (t0 , t1 , t2 , t3 , t4 , t5 , t6)
-              = t6 ,, t5 ,, t4 ,, t3 ,, t2 ,, t1 ,, t0
+  tree⁷->tree (∅  , ∅  , ∅  , ∅  , ∅  , t₅ , t₆)
+              = t₅ ,, t₆ ,, ∅′ ,, ∅′ ,, ∅′ ,, ∅′ ,, ∅′
+  tree⁷->tree (∅  , ∅  , ∅  , ∅  , [ a , b ] , t₅ , t₆)
+              = ∅′ ,, t₆ ,, t₅ ,, a ,, b
+  tree⁷->tree (t₀ , t₁ , t₂ , t₃ , t₄ , t₅ , t₆)
+              = t₆ ,, t₅ ,, t₄ ,, t₃ ,, t₂ ,, t₁ ,, t₀
 
   tree->tree⁷ : BareBinTree → BareBinTree ⁷
   tree->tree⁷ [ [ [ [ [ ∅ , a ] , b ] , c ] , d ] , e ]
               = ∅ , ∅ , ∅ , ∅ , ∅ , ∅ , (a ,, b ,, c ,, d ,, e)
-  tree->tree⁷ [ [ [ [ [ t6 , t5 ] , ∅ ] , ∅ ] , ∅ ] , ∅ ]
-              = ∅ , ∅ , ∅ , ∅ , ∅ , t5 , t6
-  tree->tree⁷ [ [ [ [ ∅ , t6 ] , t5 ] , a ] , b ]
-              = ∅ , ∅ , ∅ , ∅ , (a ,, b) , t5 , t6
-  tree->tree⁷ [ [ [ [ [ [ t6 , t5 ] , t4 ] , t3 ] , t2 ] , t1 ] , t0 ]
-              = t0 , t1 , t2 , t3 , t4 , t5 , t6
+  tree->tree⁷ [ [ [ [ [ t₆ , t₅ ] , ∅ ] , ∅ ] , ∅ ] , ∅ ]
+              = ∅ , ∅ , ∅ , ∅ , ∅ , t₅ , t₆
+  tree->tree⁷ [ [ [ [ ∅ , t₆ ] , t₅ ] , a ] , b ]
+              = ∅ , ∅ , ∅ , ∅ , (a ,, b) , t₅ , t₆
+  tree->tree⁷ [ [ [ [ [ [ t₆ , t₅ ] , t₄ ] , t₃ ] , t₂ ] , t₁ ] , t₀ ]
+              = t₀ , t₁ , t₂ , t₃ , t₄ , t₅ , t₆
   tree->tree⁷ _ = ∅ , ∅ , ∅ , ∅ , ∅ , ∅ , ∅
 
   tree⁷<=>tree : BareBinTree ⁷ ⇔ BareBinTree
@@ -51,11 +51,11 @@ private
   -- proofL : ∀ tree → tree⁷->tree (tree->tree⁷ tree) ≡ tree
   -- proofL [ [ [ [ [ ∅ , a ] , b ] , c ] , d ] , e ]
   --        = refl
-  -- proofL [ [ [ [ [ Node x t6 t7 , t5 ] , ∅ ] , ∅ ] , ∅ ] , ∅ ]
+  -- proofL [ [ [ [ [ Node x t₆ t7 , t₅ ] , ∅ ] , ∅ ] , ∅ ] , ∅ ]
   --        = {!!}
-  -- proofL [ [ [ [ ∅ , t6 ] , t5 ] , a ] , b ]
+  -- proofL [ [ [ [ ∅ , t₆ ] , t₅ ] , a ] , b ]
   --        = refl
-  -- proofL [ [ [ [ [ [ t6 , t5 ] , t4 ] , t3 ] , t2 ] , t1 ] , t0 ]
+  -- proofL [ [ [ [ [ [ t₆ , t₅ ] , t₄ ] , t₃ ] , t₂ ] , t₁ ] , t₀ ]
   --        = {!!}
   -- proofL _ = {!!}
 
