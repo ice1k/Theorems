@@ -14,3 +14,9 @@ A ⁴ = A ³ × A
 _⁵ : ∀ {a} (A : Set a) → Set a
 A ⁵ = A ⁴ × A
 
+_⁶ : ∀ {a} (A : Set a) → Set a
+A ⁶ = A ⁵ × A
+
+_⁷ : ∀ {a} (A : Set a) → Set a
+A ⁷ = A ⁶ × A
+
