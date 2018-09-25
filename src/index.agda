@@ -84,6 +84,10 @@ import Isos.NatLike
   using (iso-nat-vec) -- with vector
   using (iso-nat-list) -- with list
 
+--- trees
+import Isos.TreeLike
+  using (iso-seven-tree-in-one) -- seven trees in one
+
 -- groups
 --- s3 group, xxx=e, yy=e, yx=xxy
 import Groups.Symm.S3
