@@ -11,7 +11,7 @@ not false = true
 -- T true  = ⊤
 -- T false = ⊥
 
-if_then_else_ : ∀ {ℓ} {A : Set ℓ} → 𝔹 → A → A → A
+if_then_else_ : ∀ {a} {A : Set a} → 𝔹 → A → A → A
 if true  then t else _ = t
 if false then _ else f = f
 

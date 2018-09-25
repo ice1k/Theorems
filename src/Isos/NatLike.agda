@@ -6,7 +6,7 @@ open import Nats
 open import Data.Product
 
 open import Equality
-open import Agda.Builtin.Unit
+open import Data.Unit
 
 ------------------------------------------------------------------------
 -- internal stuffs
@@ -41,6 +41,9 @@ private
   ℕ→vec : ∀ {n} → ∃ (λ m → n ≡ m) → Vec ⊤ n
   ℕ→vec  (zero   , refl) = []
   ℕ→vec ((suc a) , refl) = tt ∷ ℕ→vec (a , refl)
+
+------------------------------------------------------------------------
+-- public aliases
 
 iso-nat-list : ℕ ⇔ List ⊤
 iso-nat-list = ∧-intro ℕ→list list→ℕ

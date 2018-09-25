@@ -5,7 +5,7 @@ open import Equality
 ------------------------------------------------------------------------
 -- definitions
 
-bin-op : ∀ {ℓ} (A : Set ℓ) → Set ℓ
+bin-op : ∀ {a} (A : Set a) → Set a
 bin-op A = A → A → A
 
 ------------------------------------------------------------------------
@@ -13,7 +13,7 @@ bin-op A = A → A → A
 
 private
 
-  record S₃ {ℓ} (A : Set ℓ) : Set ℓ where
+  record S₃ {a} (A : Set a) : Set a where
     constructor ⟨_,_,_⟩-⟨_,_,_⟩-⟨_,_,_⟩
     infixl 5 _×_
     field
@@ -26,7 +26,7 @@ private
       law-yy=e : y × y ≡ e
       law-yx=xxy : y × x ≡ x × x × y
 
-    law-xyx=y : Set ℓ
+    law-xyx=y : Set a
     law-xyx=y = x × y × x ≡ y
 
     xyx=y : law-xyx=y
@@ -41,5 +41,5 @@ private
 ------------------------------------------------------------------------
 -- public aliases
 
-s3-property-1 : ∀ {ℓ} (A : S₃ (Set ℓ)) → S₃.law-xyx=y A
+s3-property-1 : ∀ {a} (A : S₃ (Set a)) → S₃.law-xyx=y A
 s3-property-1 = S₃.xyx=y
