@@ -25,6 +25,14 @@ private
   ℕ→list  zero   = []
   ℕ→list (suc a) = tt ∷ ℕ→list a
 
+  proofListL : ∀ n → list→ℕ (ℕ→list n) ≡ n
+  proofListL zero = refl
+  proofListL (suc n) rewrite proofListL n = refl
+
+  proofListR : ∀ n → ℕ→list (list→ℕ n) ≡ n
+  proofListR [] = refl
+  proofListR (tt ∷ l) rewrite proofListR l = refl
+
   module WithVec where
 
   open import Vecs
@@ -41,6 +49,13 @@ private
   ℕ→vec : ∀ {n} → ∃ (λ m → n ≡ m) → Vec ⊤ n
   ℕ→vec  (zero   , refl) = []
   ℕ→vec ((suc a) , refl) = tt ∷ ℕ→vec (a , refl)
+
+  proofVecL : ∀ {n} (m : ∃ (λ m → n ≡ m)) → vec→ℕ (ℕ→vec m) ≡ m
+  proofVecL (zero , refl) = refl
+  proofVecL (suc a , refl) rewrite proofVecL (a , refl) = refl
+
+  -- how to prove?
+  -- proofVecR : ∀ n → ℕ→vec (vec→ℕ n) ≡ n
 
 ------------------------------------------------------------------------
 -- public aliases
