@@ -25,7 +25,7 @@ private
   tree⁷->tree : BareBinTree ⁷ → BareBinTree
   tree⁷->tree (∅ , ∅ , ∅ , ∅ , ∅ , ∅ , [ [ [ [ a , b ] , c ] , d ] , e ])
               = ∅′ ,, a ,, b ,, c ,, d ,, e
-  tree⁷->tree (∅  , ∅  , ∅  , ∅  , ∅  , ∅  , ∅′) = ∅′
+  tree⁷->tree (∅  , ∅  , ∅  , ∅  , ∅  , ∅  , a) = a
   tree⁷->tree (∅  , ∅  , ∅  , ∅  , ∅  , t₅ , t₆)
               = t₅ ,, t₆ ,, ∅′ ,, ∅′ ,, ∅′ ,, ∅′ ,, ∅′
   tree⁷->tree (∅  , ∅  , ∅  , ∅  , [ a , b ] , t₅ , t₆)
@@ -42,7 +42,7 @@ private
               = ∅ , ∅ , ∅ , ∅ , (a ,, b) , t₅ , t₆
   tree->tree⁷ [ [ [ [ [ [ t₆ , t₅ ] , t₄ ] , t₃ ] , t₂ ] , t₁ ] , t₀ ]
               = t₀ , t₁ , t₂ , t₃ , t₄ , t₅ , t₆
-  tree->tree⁷ _ = ∅ , ∅ , ∅ , ∅ , ∅ , ∅ , ∅
+  tree->tree⁷ a = ∅ , ∅ , ∅ , ∅ , ∅ , ∅ , a
 
   tree⁷<=>tree : BareBinTree ⁷ ⇔ BareBinTree
   tree⁷<=>tree = ∧-intro tree⁷->tree tree->tree⁷
