@@ -18,11 +18,8 @@ private
   ++a+b=a+b++ (suc a) b = cong suc $ ++a+b=a+b++ a b
 
   a+b=b+a : ∀ a b → a + b ≡ b + a
-  a+b=b+a a  zero   = a+0=0+a a
-  a+b=b+a a (suc b)
-    rewrite a+b=b+a b a
-          | ++a+b=a+b++ a b
-            = refl
+  a+b=b+a zero b = sym (a+0=0+a b)
+  a+b=b+a (suc a) b = suc (a + b) ≡⟨ cong suc (a+b=b+a a b) ⟩ ++a+b=a+b++ b a
 
 ------------------------------------------------------------------------
 -- public aliases

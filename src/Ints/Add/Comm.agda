@@ -11,8 +11,8 @@ open import Equality
 private
 
   a+b=b+a : ∀ a b → a + b ≡ b + a
-  a+b=b+a (+    a  ) (+    b  )
-    rewrite nat-add-comm a b = refl
+  a+b=b+a (+ a) (+ b) = + (a :+: b)
+    ≡⟨ cong +_ (nat-add-comm a b) ⟩ + (b :+: a) QED
   a+b=b+a (+    a  ) (-[1+ b ])
     rewrite nat-add-comm a b = refl
   a+b=b+a (-[1+ a ]) (+    b  )

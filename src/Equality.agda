@@ -4,6 +4,8 @@ open import Agda.Builtin.Equality public
 open import Relation.Nullary
 
 infix 4 _≅_ _≢_
+infixr 2 _≡⟨_⟩_
+infix  3 _QED
 
 data _≅_ {ℓ} {A : Set ℓ} (x : A) : {B : Set ℓ} → B → Set ℓ where
    refl : x ≅ x
@@ -35,3 +37,10 @@ cong₂ f refl refl = refl
 
 _≢_ : ∀ {a} {A : Set a} → A → A → Set a
 x ≢ y = ¬ x ≡ y
+
+_≡⟨_⟩_ : ∀ {A : Set} (x : A) {y z : A}
+       → x ≡ y → y ≡ z → x ≡ z
+x ≡⟨ refl ⟩ refl = refl
+
+_QED : ∀ {A : Set} (x : A) → x ≡ x
+x QED = refl

@@ -2,8 +2,8 @@ module Rationals where
 
 open import Nats renaming (_+_ to _:+:_; _*_ to _:*:_)
 open import Equality
-open import Agda.Builtin.TrustMe using ()
 open import Data.Product
+open import Agda.Builtin.TrustMe
 
 infixl 7 _÷_
 infixr 5 _→ℕ
@@ -19,10 +19,10 @@ _→ℕ {a} _ = a , refl
 
 -- of course.
 _÷_↓_ : ∀ a b n → (a :*: n ÷ (b :*: n)) ≡ a ÷ b
-_ ÷ _ ↓ _ = Agda.Builtin.TrustMe.primTrustMe
+_ ÷ _ ↓ _ = primTrustMe
 
 _÷_↑_ : ∀ a b n → a ÷ b ≡ (a :*: n ÷ (b :*: n))
-a ÷ b ↑ n rewrite a ÷ b ↓ n = refl
+a ÷ b ↑ n = sym (a ÷ b ↓ n)
 
 _+_ : ℚ → ℚ → ℚ
 a ÷ c + b ÷ d = (a :*: d :+: b :*: c) ÷ (c :*: d)
